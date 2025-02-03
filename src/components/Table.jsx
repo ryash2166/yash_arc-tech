@@ -19,21 +19,21 @@ const PostsTable = () => {
   }, []);
 
   return (
-    <TableContainer component={Paper} sx={{ width: { xs: "100%", lg: "60%" }, margin: "auto" }} className="border container border-slate-300">
+    <TableContainer component={Paper} sx={{ width: { xs: "100%", lg: "50%" }, margin: "auto" }} className="border border-slate-300">
       <Table>
         <TableHead>
           <TableRow>
-            <TableCell align="center" className="!font-bold">ID</TableCell>
-            <TableCell align="center" className="!font-bold">Title</TableCell>
-            <TableCell align="center" className="!font-bold">Body</TableCell>
+            <TableCell className="!font-bold">ID</TableCell>
+            <TableCell className="!font-bold">Title</TableCell>
+            <TableCell className="!font-bold">Body</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {posts.slice(0, 10).map((post) => (
+          {posts.slice(0,10).map((post) => (
             <TableRow key={post.id}>
-              <TableCell align="center">{post.id}</TableCell>
+              <TableCell>{post.id}</TableCell>
               <TableCell>{post.title}</TableCell>
-              <TableCell align="center">{post.body}</TableCell>
+              <TableCell>{post.body}</TableCell>
             </TableRow>
           ))}
         </TableBody>
