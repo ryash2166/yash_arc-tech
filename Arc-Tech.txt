@@ -1,0 +1,29 @@
+3) How do you pass the redux store to the react js page ?
+=> To pass the Redux store, wrap the root component with Provider in index.js:
+
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { Provider } from "react-redux";
+import store from "./store"; // Import your Redux store
+import App from "./App";
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+  <Provider store={store}>
+    <App />
+  </Provider>
+);
+
+// Then, inside any component, use useSelector and useDispatch:
+
+import { useSelector, useDispatch } from "react-redux";
+
+const MyComponent = () => {
+  const data = useSelector((state) => state.someData);
+  const dispatch = useDispatch();
+
+  return <div>{data}</div>;
+};
+
+4) What would be the prompt you would write if you had to display the above table in react js in the form of a mindmap.
+=> Design mindmap component using MUI and React Flow to visualize JSONPlaceholder posts. The central node should be labeled 'Posts', branching out to 10 child nodes, each displaying a Post ID, Title, Body. Fetch data dynamically using async/await and ensure a responsive layout. Use a structured tree format with connecting edges, soft shadows, and rounded corners for a clean and modern UI.
